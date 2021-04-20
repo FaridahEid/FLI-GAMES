@@ -15,9 +15,11 @@
         display: block;
         margin: 0 auto;
         text-align: center;
+        color:white;
     }
+
     table, th, td {
-        border: 1px solid black;
+        border: 1px solid #a9dad5;
         border-collapse: collapse;
     }
     th, td {
@@ -33,6 +35,10 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+
+
+
 </style>
 <html>
 <head>
@@ -66,12 +72,18 @@
     <%
         }else{
     %>
-    <table style="width:60%" class="center">
-        <tr>
-            <th>Name</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Distribution Services</th>
+</div>
+</body>
+
+<div class="container">
+
+    <%----%>
+    <table class="center">
+        <tr class="boxed2">
+            <th><b>Name</b></th>
+            <th><b>Year</b></th>
+            <th><b>Genre</b></th>
+            <th><b>Distribution Services</b></th>
         </tr>
     <%
 
@@ -80,16 +92,16 @@
 
             %>
         <tr>
-            <td><%=g.getGname()%></td>
-            <td><%=g.getYear()%></td>
-            <td><%=g.getGenre()%></td>
-            <td><%for(String s: g.getPlatform()){
+            <td><w><%=g.getGname()%></w></td>
+            <td><w><%=g.getYear()%></w></td>
+            <td><w><%=g.getGenre()%></w></td>
+            <td><w><%for(String s: g.getPlatform()){
                 out.println(s);
                 %>
                 <br>
                 <%
             }%>
-            </td>
+            </w></td>
         </tr>
     <%
         }
@@ -97,5 +109,5 @@
     %>
     </table>
 </div>
-</body>
+
 </html>

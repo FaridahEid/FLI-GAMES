@@ -21,11 +21,9 @@
     <title>Player Sign up</title>
 </head>
 <body>
-<div class="container">
-    <br>
+<div class="container card">
     <br>
     <h2>Sign up as a Player</h2>
-    <br>
     <%
         playerSignupError error = (playerSignupError) request.getAttribute("error");
         if(error!=null){
@@ -64,26 +62,25 @@
     <form action="addPlayer">
         <label>Player ID: </label>
         <input type="text" name ="gamerID">
-        <label>Player ID must start with 'G' and followed by 8 digits. (e.g. G01234567)</label>
+        <label><sw>Player ID must start with 'G' and followed by 8 digits. (e.g. G01234567)</sw></label>
         <br>
         <label>Gamer Name: </label>
         <input type="text" name="gamerName">
         <br>
         <label>Date of Birth: </label>
         <input type="date" name="DOB">
-        <label>(e.g. 01/01/1999)</label>
+        <label><sw>(e.g. 01/01/1999)</sw></label>
         <br>
         <label>Email: </label>
         <input type="email" name="email">
         <br>
         <label>Password</label>
         <input type="password" name ="password">
-        <label>Password must be at least 8 characters.</label>
+        <label><sw>Password must be at least 8 characters.</sw></label>
         <br>
         <br>
         <input type="submit" name="signup" value="Sign up">
     </form>
-    <br>
     <br>
 </div>
 </body>
