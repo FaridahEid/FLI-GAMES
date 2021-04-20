@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
+    @import "stylesheet.css";
     .container {
         display: block;
         margin: 0 auto;
