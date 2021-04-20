@@ -9,6 +9,7 @@
 <%@ page import="com.PC_Games_DB.dev_admins.devAdmin" %>
 
 <style type="text/css">
+    @import "stylesheet.css";
     .container {
         display: block;
         margin: 0 auto;
@@ -17,6 +18,8 @@
 </style>
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Admin</title>
 </head>
 <body>

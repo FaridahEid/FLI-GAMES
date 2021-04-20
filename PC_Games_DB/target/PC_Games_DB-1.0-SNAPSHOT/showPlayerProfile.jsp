@@ -12,12 +12,15 @@
     @import "stylesheet.css";
     .container {
         display: block;
-        margin: 0 auto;
-        text-align: center;
+        font-size: 20px;
+        margin: 10px 20px 10px 30px;
+        /*text-align: center;*/
     }
 </style>
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Player Profile</title>
     <script type="text/javascript">
         function showChangeName(){
@@ -31,9 +34,9 @@
         }
     </script>
 </head>
-<body>
+<body class="container messagebox">
 <a href="index.jsp">Sign Out</a>
-<div class="container">
+<div>
     <br>
     <br>
     <%
@@ -41,7 +44,7 @@
         if(error!=null){
             if(error.isOldPasswordError()){
 
-            %>
+    %>
     <p style="color: red">Old Password is Incorrect. Try again.</p>
     <br>
     <br>
@@ -59,27 +62,35 @@
         //out.println("Gamer name:"  + p.getGamerName());
 
     %>
-    <div class="sticky"> Gamer name: <%=p.getGamerName()%></div>
+    <div class="boxed gn">Gamer name: <%=p.getGamerName()%>
+        <%--style="float: right;"--%>
+        <input type="button" class="myButton" value="Level 4" style="float: right;">
+    </div>
 
-    <%
-        //out.println("Gamer ID: " + p.getGamerID());
-    %>
-    <h4>Gamer ID: <%=p.getGamerID()%></h4>
+        <%
+            //out.println("Gamer ID: " + p.getGamerID());
+        %>
+    <br>
+    <div class="pp"></div>
+        <h4>Gamer ID: <%=p.getGamerID()%></h4>
+        <%
+            //out.println("Date of birth: " + p.getDOB());
+        %>
+    <br>
+        <h4>Date of Birth: <%=p.getDOB()%></h4>
+        <%
+            //out.println("Email: " + p.getEmail());
+        %>
+        <h4>Email: <%=p.getEmail()%></h4>
+        <%
+            //out.println("Date joined: " + p.getDate_joined());
+        %>
+        <h4>Date joined: <%=p.getDate_joined()%></h4>
 
-    <%
-        //out.println("Date of birth: " + p.getDOB());
-    %>
-    <h5>Date of Birth: <%=p.getDOB()%></h5>
-    <%
-        //out.println("Email: " + p.getEmail());
-    %>
-    <h5>Email: <%=p.getEmail()%></h5>
-    <%
-        //out.println("Date joined: " + p.getDate_joined());
-    %>
-    <h5>Date joined: <%=p.getDate_joined()%></h5>
     <br>
     <br>
+    <br>
+    <%--class="myButton"--%>
     <input type="button" onclick="showChangeName()" value="Change Gamer Name">
     <input type="button" onclick="showChangeEmail()" value="Change Email">
     <input type="button" onclick="showChangePassword()" value="Change Password">

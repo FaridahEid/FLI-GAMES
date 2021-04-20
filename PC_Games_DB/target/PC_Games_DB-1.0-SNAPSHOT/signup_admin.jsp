@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Admin Sign up</title>
 </head>
 <body>

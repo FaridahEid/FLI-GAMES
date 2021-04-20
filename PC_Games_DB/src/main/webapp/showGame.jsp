@@ -8,6 +8,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
+    @import "stylesheet.css";
     .container {
         display: block;
         margin: 0 auto;
@@ -17,6 +18,8 @@
 
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Game</title>
 </head>
 <body>

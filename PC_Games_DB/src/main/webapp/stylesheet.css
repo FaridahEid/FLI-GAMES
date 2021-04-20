@@ -1,4 +1,3 @@
-
 body {
     padding: 25px;
     color: black;
@@ -10,6 +9,7 @@ body {
     background-color: #000000;
     background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
+
 .dark-body{
     background-color: #2d3436;
     background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
@@ -17,10 +17,19 @@ body {
     padding: 10px;
     border: 5px black;
 }
+
 .dark-mode {
     background-color: black;
     color: white;
 }
+
+b{
+    color: #aff6cf;
+    font-size: 20px;
+    left: -100px;
+}
+
+
 h2 {
     font-family: "Wallpoet", sans-serif;
     font-size: 50px;
@@ -31,10 +40,17 @@ h2 {
 h3{
     font-size: 17px;
 }
-h5{
-    position: relative;
+
+h4{
     color: white;
-    right: 70px;
+    font-size: 20px;
+    left: -70px;
+}
+
+h5{
+    color: white;
+    left: -70px;
+
 }
 
 h6{
@@ -52,22 +68,31 @@ h6{
     border: 1px solid #0000 ;
     box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
-.messagebox {
-    color: greenyellow;
-    margin: 10px;
-    padding: 10px;
-    font-size: 22px;
-}
-h4{
-    color: white;
 
-}
+
 div.sticky{
     text-align: left;
     top: 0;
     padding: 5px;
-    background-color: lightslategrey;
-    border: 2px solid #4CAF50;
+    /*background-color: lightslategrey;
+    border: 2px solid #9f98e8;*/
+    /*background-color: #aff6cf;*/
+    border: 2px solid #9f98e8;
+}
+/*profile picture*/
+div.pp{
+    width:200px;
+    height:200px;
+    content:url("Kayn_PP.png");
+    float: right;
+    margin:0;
+    padding:10px;
+    border: 2px solid gray;
+
+}
+.gn{
+    color: #9f98e8;
+    font-size: 30px;
 }
 
 .center {
@@ -84,7 +109,6 @@ div.sticky{
     border-radius: 5px;
     background-color: grey;
     background-image: linear-gradient(315deg, #aff6cf 0%, #9f98e8 74%);
-
 }
 .card:hover {
     box-shadow: 0px 10px 15px 0 rgb(170, 221, 212);
@@ -151,4 +175,33 @@ div.sticky{
     content: "";
     clear: both;
     display: table;
+}
+
+
+/* buttons */
+.myButton {
+    box-shadow:inset 0px 1px 0px 0px #efdcfb;
+    background-image:linear-gradient(315deg, #dfbdfa 5%, #bc80ea 100%);
+    background-color:#dfbdfa;
+    background-color:#dfbdfa;
+    border-radius:6px;
+    border:1px solid #c584f3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9752cc;
+}
+
+.myButton:hover {
+    background-image:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    background-color:#bc80ea;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
 }

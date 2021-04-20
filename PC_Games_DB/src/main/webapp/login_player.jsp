@@ -18,6 +18,8 @@
 
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Player Log in</title>
 </head>
 <body>

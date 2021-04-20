@@ -10,6 +10,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.PC_Games_DB.publishers.publisher" %>
 <style type="text/css">
+    @import "stylesheet.css";
     .container {
         display: block;
         margin: 0 auto;
@@ -35,6 +36,8 @@
 </style>
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Games</title>
 </head>
 <body>

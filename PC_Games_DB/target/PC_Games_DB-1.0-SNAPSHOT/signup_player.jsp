@@ -16,6 +16,8 @@
 </style>
 <html>
 <head>
+    <%--Logo in tab--%>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <title>Player Sign up</title>
 </head>
 <body>
