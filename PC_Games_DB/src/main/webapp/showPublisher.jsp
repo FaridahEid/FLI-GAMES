@@ -84,12 +84,15 @@
             <br>
             <label>New Password: </label>
             <input type="password" name="newPassword">
-            <label>Password must be at least 8 characters.</label>
+            <label><mw>Password must be at least 8 characters.</mw></label>
+            <br>
             <br>
             <input type="submit" name="changePassword" value="Change">
         </form>
+
     </div>
     <form action="editPublisher">
+    </form>
 </div>
 </body>
 </html>

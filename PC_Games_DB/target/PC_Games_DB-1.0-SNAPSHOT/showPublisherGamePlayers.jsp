@@ -10,6 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
     @import "stylesheet.css";
+    <%--
     .container {
         display: block;
         margin: 0 auto;
@@ -17,6 +18,31 @@
     }
     table, th, td {
         border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    table {
+        border-spacing: 5px;
+    }
+    th {
+        text-align: left;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    --%>
+    .container {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color:white;
+    }
+
+    table, th, td {
+        border: 1px solid #a9dad5;
         border-collapse: collapse;
     }
     th, td {
@@ -53,8 +79,8 @@
     </h2>
     <br>
     <br>
-    <table style="width:60%" class="center">
-        <tr>
+    <table style="width:32.5%" class="center">
+        <tr class="boxed2">
             <th>Gamer ID</th>
             <th>Gamer Name</th>
             <th>Email</th>
@@ -65,9 +91,9 @@
 
         %>
         <tr>
-            <td><%=p.getGamerID()%></td>
-            <td><%=p.getGamerName()%></td>
-            <td><%=p.getEmail()%></td>
+            <td><w><%=p.getGamerID()%></w></td>
+            <td><w><%=p.getGamerName()%></w></td>
+            <td><w><%=p.getEmail()%></w></td>
         </tr>
         <%
             }
