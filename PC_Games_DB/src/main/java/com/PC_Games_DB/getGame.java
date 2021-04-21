@@ -1,7 +1,7 @@
 package com.PC_Games_DB;
 
 import com.PC_Games_DB.games.dao.gameDao;
-import com.PC_Games_DB.games.game;
+import com.PC_Games_DB.games.Game;
 
 import com.PC_Games_DB.players.dao.playerDao;
 import com.PC_Games_DB.players.player;
@@ -21,7 +21,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayer();
+            ArrayList<Game> games = dao.getAllGamesForPlayer();
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -32,7 +32,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerNamesAsc();
+            ArrayList<Game> games = dao.getAllGamesForPlayerNamesAsc();
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -43,7 +43,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerNamesDesc();
+            ArrayList<Game> games = dao.getAllGamesForPlayerNamesDesc();
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -54,7 +54,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerYearsAsc();
+            ArrayList<Game> games = dao.getAllGamesForPlayerYearsAsc();
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -65,7 +65,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerYearsDesc();
+            ArrayList<Game> games = dao.getAllGamesForPlayerYearsDesc();
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -77,7 +77,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerSearchYear(Integer.parseInt(year));
+            ArrayList<Game> games = dao.getAllGamesForPlayerSearchYear(Integer.parseInt(year));
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -89,7 +89,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerSearchGenre(genre);
+            ArrayList<Game> games = dao.getAllGamesForPlayerSearchGenre(genre);
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -101,7 +101,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerSearchName(name);
+            ArrayList<Game> games = dao.getAllGamesForPlayerSearchName(name);
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");
@@ -113,7 +113,7 @@ public class getGame extends HttpServlet {
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getAllGamesForPlayerSearchPlatform(platform);
+            ArrayList<Game> games = dao.getAllGamesForPlayerSearchPlatform(platform);
             request.setAttribute("games",games);
             request.setAttribute("player",p);
             RequestDispatcher rd =request.getRequestDispatcher("showGamesForPlayer.jsp");

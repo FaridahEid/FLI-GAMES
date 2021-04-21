@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.PC_Games_DB.games.game" %>
+<%@ page import="com.PC_Games_DB.games.Game" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.PC_Games_DB.players.player" %>
 <style type="text/css">
@@ -74,7 +74,7 @@
 <div class="container">
     <%
         player p = (player) request.getAttribute("player");
-        ArrayList<game> games = (ArrayList<game>) request.getAttribute("games");
+        ArrayList<Game> games = (ArrayList<Game>) request.getAttribute("games");
     %>
     <br>
     <br>
@@ -129,7 +129,7 @@
             <th><b>Add</b></th>
         </tr>
         <%
-            for(game g: games){
+            for(Game g: games){
         %>
         <tr>
             <td><w><%=g.getGname()%></w></td>

@@ -1,6 +1,6 @@
 package com.PC_Games_DB;
 
-import com.PC_Games_DB.errors.playerEditProfileError;
+import com.PC_Games_DB.errors.PlayerEditProfileError;
 import com.PC_Games_DB.players.player;
 import com.PC_Games_DB.players.dao.playerDao;
 import jakarta.servlet.*;
@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.PC_Games_DB.games.game;
+import com.PC_Games_DB.games.Game;
 import com.PC_Games_DB.games.dao.gameDao;
 
 @WebServlet(name = "getPlayer", value = "/getPlayer")
@@ -27,7 +27,7 @@ public class getPlayer extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("showPlayer.jsp");
                 rd.forward(request,response);
             }else{
-                playerEditProfileError error = new playerEditProfileError();
+                PlayerEditProfileError error = new PlayerEditProfileError();
                 error.setOldPasswordError(true);
                 error.setNewPasswordError(false);
                 request.setAttribute("error",error);
@@ -39,7 +39,7 @@ public class getPlayer extends HttpServlet {
         if(request.getParameter("games")!=null){
             String gamerID = request.getParameter("gamerID");
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getGamesByGamerID(gamerID);
+            ArrayList<Game> games = dao.getGamesByGamerID(gamerID);
             playerDao dao2 = new playerDao();
             player p = dao2.getPlayer(gamerID);
 

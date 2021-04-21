@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.PC_Games_DB.players.player" %>
-<%@ page import="com.PC_Games_DB.errors.playerEditProfileError" %>
+<%@ page import="com.PC_Games_DB.errors.PlayerEditProfileError" %>
 <style type="text/css">
     @import "stylesheet.css";
     .container {
@@ -40,7 +40,7 @@
     <br>
     <br>
     <%
-        playerEditProfileError error = (playerEditProfileError) request.getAttribute("error");
+        PlayerEditProfileError error = (PlayerEditProfileError) request.getAttribute("error");
         if(error!=null){
             if(error.isOldPasswordError()){
 

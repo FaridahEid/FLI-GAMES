@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.PC_Games_DB.publishers.publisher" %>
-<%@ page import="com.PC_Games_DB.errors.publisherError" %>
+<%@ page import="com.PC_Games_DB.errors.PublisherError" %>
 <style type="text/css">
     @import "stylesheet.css";
     .container {
@@ -33,7 +33,7 @@
     <br>
     <br>
     <%
-        publisherError error = (publisherError) request.getAttribute("error");
+        PublisherError error = (PublisherError) request.getAttribute("error");
         if(error!=null){
             if(error.isOldPasswordError()){
 

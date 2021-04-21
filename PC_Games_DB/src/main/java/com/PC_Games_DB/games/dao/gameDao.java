@@ -1,12 +1,12 @@
 package com.PC_Games_DB.games.dao;
 
-import com.PC_Games_DB.games.game;
+import com.PC_Games_DB.games.Game;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class gameDao {
-    public game getGame(int gameID){
-        game g = new game();
+    public Game getGame(int gameID){
+        Game g = new Game();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -24,8 +24,8 @@ public class gameDao {
         }
         return g;
     }
-    public ArrayList<game> getGamesByGamerID(String gamerID){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getGamesByGamerID(String gamerID){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -33,7 +33,7 @@ public class gameDao {
             ps.setString(1,gamerID);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -54,8 +54,8 @@ public class gameDao {
         }
         return games;
     }
-    public ArrayList<game> getGamesByPublisherID(String publisherID){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getGamesByPublisherID(String publisherID){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -63,7 +63,7 @@ public class gameDao {
             ps.setString(1,publisherID);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -92,8 +92,8 @@ public class gameDao {
         }
         return games;
     }
-    public ArrayList<game> getGamesByGameDevID(String devID){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getGamesByGameDevID(String devID){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -101,7 +101,7 @@ public class gameDao {
             ps.setString(1,devID);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -122,15 +122,15 @@ public class gameDao {
         }
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayer(){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayer(){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
             PreparedStatement ps = con.prepareStatement("select * from games");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -152,15 +152,15 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerNamesAsc(){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerNamesAsc(){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
             PreparedStatement ps = con.prepareStatement("select * from games ORDER BY gname ASC");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -182,15 +182,15 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerNamesDesc(){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerNamesDesc(){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
             PreparedStatement ps = con.prepareStatement("select * from games ORDER BY gname DESC");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -212,15 +212,15 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerYearsAsc(){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerYearsAsc(){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
             PreparedStatement ps = con.prepareStatement("select * from games ORDER BY year ASC");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -242,15 +242,15 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerYearsDesc(){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerYearsDesc(){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
             PreparedStatement ps = con.prepareStatement("select * from games ORDER BY year DESC");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -272,8 +272,8 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerSearchYear(int year){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerSearchYear(int year){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -281,7 +281,7 @@ public class gameDao {
             ps.setInt(1,year);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -303,8 +303,8 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerSearchGenre(String genre){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerSearchGenre(String genre){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -312,7 +312,7 @@ public class gameDao {
             ps.setString(1,"%"+ genre + "%");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -334,8 +334,8 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerSearchName(String name){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerSearchName(String name){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -343,7 +343,7 @@ public class gameDao {
             ps.setString(1,"%" + name + "%");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));
@@ -365,8 +365,8 @@ public class gameDao {
 
         return games;
     }
-    public ArrayList<game> getAllGamesForPlayerSearchPlatform(String platform){
-        ArrayList<game> games = new ArrayList<>();
+    public ArrayList<Game> getAllGamesForPlayerSearchPlatform(String platform){
+        ArrayList<Game> games = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -374,7 +374,7 @@ public class gameDao {
             ps.setString(1,"%" + platform + "%");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                game g = new game();
+                Game g = new Game();
                 g.setGameID(rs.getInt("gameID"));
                 g.setGname(rs.getString("gname"));
                 g.setGenre(rs.getString("genre"));

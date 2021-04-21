@@ -1,4 +1,4 @@
-<%@ page import="com.PC_Games_DB.errors.publisherError" %><%--
+<%@ page import="com.PC_Games_DB.errors.PublisherError" %><%--
   Created by IntelliJ IDEA.
   User: loay_
   Date: 4/12/2021
@@ -26,7 +26,7 @@
     <br>
     <h2>Login as a Publisher</h2>
     <%
-        publisherError error = (publisherError) request.getAttribute("error");
+        PublisherError error = (PublisherError) request.getAttribute("error");
         if(error!=null){
             if(error.isLoginError()){
 

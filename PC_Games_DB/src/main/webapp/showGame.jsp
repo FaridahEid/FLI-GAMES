@@ -1,4 +1,4 @@
-<%@ page import="com.PC_Games_DB.games.game" %><%--
+<%@ page import="com.PC_Games_DB.games.Game" %><%--
   Created by IntelliJ IDEA.
   User: loay_
   Date: 4/10/2021
@@ -25,7 +25,7 @@
 <body>
 <div class="container">
     <%
-        game g1 = (game)request.getAttribute("game");
+        Game g1 = (Game)request.getAttribute("game");
         System.out.println(g1);
         String str = "ID: " + g1.getGameID() + "\nname: " + g1.getGname() + "\nyear: " + g1.getYear() + "\ngenre: " + g1.getGenre()
                 + "\ndownloads: " + g1.getDownloads();

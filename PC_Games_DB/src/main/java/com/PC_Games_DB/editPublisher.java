@@ -1,6 +1,6 @@
 package com.PC_Games_DB;
 
-import com.PC_Games_DB.errors.publisherError;
+import com.PC_Games_DB.errors.PublisherError;
 import com.PC_Games_DB.publishers.dao.publisherDao;
 import com.PC_Games_DB.publishers.publisher;
 import jakarta.servlet.*;
@@ -26,7 +26,7 @@ public class editPublisher extends HttpServlet {
                 RequestDispatcher rd =request.getRequestDispatcher("showPublisher.jsp");
                 rd.forward(request,response);
             }else{
-                publisherError error = new publisherError();
+                PublisherError error = new PublisherError();
                 error.setNewPasswordError(true);
                 error.setLoginError(false);
                 error.setOldPasswordError(false);
@@ -36,7 +36,7 @@ public class editPublisher extends HttpServlet {
                 rd.forward(request,response);
             }
         }else{
-            publisherError error = new publisherError();
+            PublisherError error = new PublisherError();
             error.setNewPasswordError(false);
             error.setLoginError(false);
             error.setOldPasswordError(true);

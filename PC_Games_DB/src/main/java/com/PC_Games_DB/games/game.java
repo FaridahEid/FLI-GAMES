@@ -3,7 +3,7 @@ package com.PC_Games_DB.games;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class game {
+public class Game {
     private int gameID;
     private String gname;
     private int year;

@@ -1,5 +1,5 @@
 
-<%@ page import="com.PC_Games_DB.errors.playerEditProfileError" %><%--
+<%@ page import="com.PC_Games_DB.errors.PlayerEditProfileError" %><%--
   Created by IntelliJ IDEA.
   User: loay_
   Date: 4/12/2021
@@ -27,7 +27,7 @@
     <br>
     <h2>Login as a Player</h2>
     <%
-        playerEditProfileError error = (playerEditProfileError) request.getAttribute("error");
+        PlayerEditProfileError error = (PlayerEditProfileError) request.getAttribute("error");
         if(error!=null){
             if(error.isOldPasswordError()){
 

@@ -1,6 +1,6 @@
 package com.PC_Games_DB.errors;
 
-public class playerSignupError {
+public class PlayerSignupError {
     private boolean gamerIDError;
     private boolean passwordError;
     private boolean emailError;

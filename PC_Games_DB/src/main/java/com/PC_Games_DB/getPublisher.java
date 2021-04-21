@@ -1,8 +1,8 @@
 package com.PC_Games_DB;
 
-import com.PC_Games_DB.errors.publisherError;
+import com.PC_Games_DB.errors.PublisherError;
 import com.PC_Games_DB.games.dao.gameDao;
-import com.PC_Games_DB.games.game;
+import com.PC_Games_DB.games.Game;
 import com.PC_Games_DB.players.dao.playerDao;
 import com.PC_Games_DB.players.player;
 import jakarta.servlet.*;
@@ -29,7 +29,7 @@ public class getPublisher extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("showPublisher.jsp");
                 rd.forward(request,response);
             }else{
-                publisherError error = new publisherError();
+                PublisherError error = new PublisherError();
                 error.setLoginError(true);
                 error.setOldPasswordError(false);
                 error.setNewPasswordError(false);
@@ -43,7 +43,7 @@ public class getPublisher extends HttpServlet {
             publisherDao dao2 = new publisherDao();
             publisher p = dao2.getPublisher(publisherID);
             gameDao dao = new gameDao();
-            ArrayList<game> games = dao.getGamesByPublisherID(publisherID);
+            ArrayList<Game> games = dao.getGamesByPublisherID(publisherID);
             if(!games.isEmpty()){
                 request.setAttribute("games",games);
                 request.setAttribute("publisher",p);
@@ -58,7 +58,7 @@ public class getPublisher extends HttpServlet {
             publisher p = dao.getPublisher(publisherID);
             playerDao dao2 = new playerDao();
             gameDao dao3 = new gameDao();
-            game g = dao3.getGame(Integer.parseInt(gameID));
+            Game g = dao3.getGame(Integer.parseInt(gameID));
             ArrayList<player> players = new ArrayList<>();
             players = (ArrayList<player>) dao2.getPlayersByGameID(Integer.parseInt(gameID));
             if(!players.isEmpty()){

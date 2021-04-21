@@ -1,6 +1,6 @@
 package com.PC_Games_DB.errors;
 
-public class playerEditProfileError {
+public class PlayerEditProfileError {
     private boolean oldPasswordError;
     private boolean newPasswordError;
 

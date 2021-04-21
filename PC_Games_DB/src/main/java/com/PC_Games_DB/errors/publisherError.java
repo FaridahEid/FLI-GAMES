@@ -1,6 +1,6 @@
 package com.PC_Games_DB.errors;
 
-public class publisherError {
+public class PublisherError {
     private boolean loginError;
     private boolean oldPasswordError;
     private boolean newPasswordError;

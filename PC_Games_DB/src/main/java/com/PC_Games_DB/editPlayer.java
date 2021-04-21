@@ -1,6 +1,6 @@
 package com.PC_Games_DB;
 
-import com.PC_Games_DB.errors.playerEditProfileError;
+import com.PC_Games_DB.errors.PlayerEditProfileError;
 import com.PC_Games_DB.players.dao.playerDao;
 import com.PC_Games_DB.players.player;
 import jakarta.servlet.*;
@@ -44,7 +44,7 @@ public class editPlayer extends HttpServlet {
                     RequestDispatcher rd =request.getRequestDispatcher("showPlayerProfile.jsp");
                     rd.forward(request,response);
                 }else{
-                    playerEditProfileError error = new playerEditProfileError();
+                    PlayerEditProfileError error = new PlayerEditProfileError();
                     error.setOldPasswordError(false);
                     error.setNewPasswordError(true);
                     request.setAttribute("error",error);
@@ -53,7 +53,7 @@ public class editPlayer extends HttpServlet {
                     rd.forward(request,response);
                 }
             }else{
-                playerEditProfileError error = new playerEditProfileError();
+                PlayerEditProfileError error = new PlayerEditProfileError();
                 error.setOldPasswordError(true);
                 error.setNewPasswordError(false);
                 request.setAttribute("error",error);

@@ -1,4 +1,4 @@
-<%@ page import="com.PC_Games_DB.errors.playerSignupError" %><%--
+<%@ page import="com.PC_Games_DB.errors.PlayerSignupError" %><%--
   Created by IntelliJ IDEA.
   User: loay_
   Date: 4/12/2021
@@ -25,7 +25,7 @@
     <br>
     <h2>Sign up as a Player</h2>
     <%
-        playerSignupError error = (playerSignupError) request.getAttribute("error");
+        PlayerSignupError error = (PlayerSignupError) request.getAttribute("error");
         if(error!=null){
             if(error.isPasswordError()){
 

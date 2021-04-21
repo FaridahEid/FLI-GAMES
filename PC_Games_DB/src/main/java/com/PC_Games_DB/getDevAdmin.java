@@ -1,14 +1,13 @@
 package com.PC_Games_DB;
 
 
-import com.PC_Games_DB.games.dao.gameDao;
-import com.PC_Games_DB.games.game;
+import com.PC_Games_DB.errors.PlayerEditProfileError;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 import com.PC_Games_DB.dev_admins.dao.devAdminDao;
 import com.PC_Games_DB.dev_admins.devAdmin;
 
@@ -26,7 +25,12 @@ public class getDevAdmin extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("showDevAdmin.jsp");
                 rd.forward(request,response);
             }else{
-                System.out.println("invalid information");
+                PlayerEditProfileError error = new PlayerEditProfileError();
+                error.setOldPasswordError(true);
+                error.setNewPasswordError(false);
+                request.setAttribute("error", error);
+                RequestDispatcher rd = request.getRequestDispatcher("login_admin.jsp");
+                rd.forward(request, response);
             }
         }
 

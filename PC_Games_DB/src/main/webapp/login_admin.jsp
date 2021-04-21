@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.PC_Games_DB.errors.PlayerEditProfileError" %><%--
   Created by IntelliJ IDEA.
   User: loay_
   Date: 4/12/2021
@@ -27,6 +27,20 @@
 <div class="container card">
     <br>
     <h2>Login as an Admin</h2>
+
+    <br>
+    <br>
+    <%
+        PlayerEditProfileError error = (PlayerEditProfileError) request.getAttribute("error");
+        if (error != null) {
+            if (error.isOldPasswordError()) {
+    %>
+    <p style="color: red">Invalid Credientials. Try Again</p>
+    <%
+            }
+        }
+    %>
+
     <form action="getDevAdmin">
         <label>Admin ID</label>
         <input type="text" name ="adminID">

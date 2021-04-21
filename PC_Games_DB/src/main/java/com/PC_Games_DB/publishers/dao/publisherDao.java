@@ -1,13 +1,10 @@
 package com.PC_Games_DB.publishers.dao;
-import com.PC_Games_DB.games.game;
-import com.PC_Games_DB.players.player;
 import com.PC_Games_DB.publishers.publisher;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 
 public class publisherDao {
     public publisher getPublisher(String publisherID){

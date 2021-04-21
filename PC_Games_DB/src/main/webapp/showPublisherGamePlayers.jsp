@@ -1,4 +1,4 @@
-<%@ page import="com.PC_Games_DB.games.game" %>
+<%@ page import="com.PC_Games_DB.games.Game" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.PC_Games_DB.players.player" %><%--
   Created by IntelliJ IDEA.
@@ -72,7 +72,7 @@
     <br>
     <h2>
         <%
-            game g = (game) request.getAttribute("game");
+            Game g = (Game) request.getAttribute("game");
             ArrayList<player> players = (ArrayList<player>) request.getAttribute("players");
             out.println("All Players for GameID: " + g.getGameID());
         %>

@@ -1,6 +1,6 @@
 package com.PC_Games_DB;
 
-import com.PC_Games_DB.errors.playerSignupError;
+import com.PC_Games_DB.errors.PlayerSignupError;
 import com.PC_Games_DB.players.dao.playerDao;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -27,7 +27,7 @@ public class addPlayer extends HttpServlet {
         DOB = s[2] + "/" + s[1] + "/" + s[0];
 
         if(!checkGamerID(gamerID)){
-            playerSignupError error = new playerSignupError();
+            PlayerSignupError error = new PlayerSignupError();
             error.setGamerIDError(true);
             error.setEmailError(false);
             error.setDOBError(false);
@@ -37,7 +37,7 @@ public class addPlayer extends HttpServlet {
             RequestDispatcher rd =request.getRequestDispatcher("signup_player.jsp");
             rd.forward(request,response);
         }else if(password.length()<8){
-            playerSignupError error = new playerSignupError();
+            PlayerSignupError error = new PlayerSignupError();
             error.setGamerIDError(false);
             error.setEmailError(false);
             error.setDOBError(false);
@@ -47,7 +47,7 @@ public class addPlayer extends HttpServlet {
             RequestDispatcher rd =request.getRequestDispatcher("signup_player.jsp");
             rd.forward(request,response);
         }else if(!dobCheck(DOB)){
-            playerSignupError error = new playerSignupError();
+            PlayerSignupError error = new PlayerSignupError();
             error.setGamerIDError(false);
             error.setEmailError(false);
             error.setDOBError(true);
@@ -66,7 +66,7 @@ public class addPlayer extends HttpServlet {
                 RequestDispatcher rd =request.getRequestDispatcher("login_player.jsp");
                 rd.forward(request,response);
             }else{
-                playerSignupError error = new playerSignupError();
+                PlayerSignupError error = new PlayerSignupError();
                 error.setGamerIDError(false);
                 error.setEmailError(false);
                 error.setDOBError(false);
