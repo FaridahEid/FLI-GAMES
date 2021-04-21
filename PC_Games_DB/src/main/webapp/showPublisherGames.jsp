@@ -11,13 +11,38 @@
 <%@ page import="com.PC_Games_DB.publishers.publisher" %>
 <style type="text/css">
     @import "stylesheet.css";
-    .container {
+    <%--.container {
         display: block;
         margin: 0 auto;
         text-align: center;
     }
     table, th, td {
         border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    table {
+        border-spacing: 5px;
+    }
+    th {
+        text-align: left;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    --%>
+    .container {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color:white;
+    }
+
+    table, th, td {
+        border: 1px solid #a9dad5;
         border-collapse: collapse;
     }
     th, td {
@@ -51,8 +76,8 @@
     %>
     <br>
     <br>
-    <table style="width:60%" class="center">
-        <tr>
+    <table style="width:70%" class="center">
+        <tr class="boxed2">
             <th>ID</th>
             <th>Name</th>
             <th>Year</th>
@@ -70,19 +95,19 @@
 
             %>
         <tr>
-            <td><%=g.getGameID()%></td>
-            <td><%=g.getGname()%></td>
-            <td><%=g.getYear()%></td>
-            <td><%=g.getGenre()%></td>
-            <td><%=g.getDeveloper()%></td>
-            <td><%=g.getDownloads()%></td>
-            <td><%for(String s: g.getPlatform()){
+            <td><w><%=g.getGameID()%></w></td>
+            <td><w><%=g.getGname()%></w></td>
+            <td><w><%=g.getYear()%></w></td>
+            <td><w><%=g.getGenre()%></w></td>
+            <td><w><%=g.getDeveloper()%></w></td>
+            <td><w><%=g.getDownloads()%></w></td>
+            <td><w><%for(String s: g.getPlatform()){
                 out.println(s);
             %>
                 <br>
                 <%
                     }%>
-            </td>
+            </w></td>
             <td>
                 <form action="getPublisher">
                     <input type="hidden" name="publisherID" value=<%=p.getPublisherID()%>>

@@ -11,6 +11,7 @@
 <%@ page import="com.PC_Games_DB.players.player" %>
 <style type="text/css">
     @import "stylesheet.css";
+    <%--
     .container {
         display: block;
         margin: 0 auto;
@@ -33,7 +34,34 @@
         margin-left: auto;
         margin-right: auto;
     }
+    --%>
+    .container {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color:white;
+    }
+
+    table, th, td {
+        border: 1px solid #a9dad5;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    table {
+        border-spacing: 5px;
+    }
+    th {
+        text-align: left;
+    }
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 </style>
+
 <html>
 <head>
     <%--Logo in tab--%>
@@ -41,6 +69,7 @@
     <title>Games</title>
 </head>
 <body>
+
 <a href="index.jsp">Sign Out</a>
 <div class="container">
     <%
@@ -92,27 +121,27 @@
         }else{
     %>
     <table style="width:60%" class="center">
-        <tr>
-            <th>Name</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Distribution Services</th>
-            <th>Add</th>
+        <tr class="boxed2">
+            <th><b>Name</b></th>
+            <th><b>Year</b></th>
+            <th><b>Genre</b></th>
+            <th><b>Distribution Services</b></th>
+            <th><b>Add</b></th>
         </tr>
         <%
             for(game g: games){
         %>
         <tr>
-            <td><%=g.getGname()%></td>
-            <td><%=g.getYear()%></td>
-            <td><%=g.getGenre()%></td>
-            <td><%for(String s: g.getPlatform()){
+            <td><w><%=g.getGname()%></w></td>
+            <td><w><%=g.getYear()%></w></td>
+            <td><w><%=g.getGenre()%></w></td>
+            <td><w><%for(String s: g.getPlatform()){
                 out.println(s);
             %>
                 <br>
                 <%
                     }%>
-            </td>
+            </w></td>
             <td>
                 <form action="addGame">
                     <input type="hidden" name="gameID" value=<%=g.getGameID()%>>
@@ -131,3 +160,4 @@
 </div>
 </body>
 </html>
+

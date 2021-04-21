@@ -22,7 +22,7 @@
     <title>Publisher Log in</title>
 </head>
 <body>
-<div class="container">
+<div class="container card">
     <br>
     <h2>Login as a Publisher</h2>
     <%

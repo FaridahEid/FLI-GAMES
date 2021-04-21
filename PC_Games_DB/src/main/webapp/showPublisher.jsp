@@ -53,14 +53,14 @@
             }
         }
         publisher p = (publisher) request.getAttribute("publisher");
-        out.println("Publisher name: " + p.getPname());
+        //out.println("Publisher name: " + p.getPname());
     %>
-    <br>
-    <br>
+    <h2>Welcome <%=p.getPname()%></h2>
 
     <%
-        out.println("Publisher ID: " + p.getPublisherID());
+        //out.println("Publisher ID: " + p.getPublisherID());
     %>
+    <h2>ID: <%=p.getPublisherID()%></h2>
     <br>
     <br>
     <input type="button" onclick="showChangePassword()" value="Change Password">

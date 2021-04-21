@@ -64,7 +64,7 @@
     %>
     <div class="boxed gn">Gamer name: <%=p.getGamerName()%>
         <%--style="float: right;"--%>
-        <input type="button" class="myButton" value="Level 4" style="float: right;">
+        <input type="button" class="myButton" value="Level 4" style="float:right; width:120px; height:35px; font-size: 20px;">
     </div>
 
         <%
@@ -90,12 +90,18 @@
     <br>
     <br>
     <br>
+    <hr>
+    <div>
+    <underline>Edit Profile</underline>
+    <br>
     <%--class="myButton"--%>
     <input type="button" onclick="showChangeName()" value="Change Gamer Name">
     <input type="button" onclick="showChangeEmail()" value="Change Email">
     <input type="button" onclick="showChangePassword()" value="Change Password">
     <br>
     <br>
+    </div>
+
     <div id="changeName" style="display: none">
         <form action="editPlayer">
             <input type="hidden" name="gamerID" value=<%=p.getGamerID()%>>
