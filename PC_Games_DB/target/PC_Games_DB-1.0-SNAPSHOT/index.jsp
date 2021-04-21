@@ -61,8 +61,7 @@
                 <h3>As has become something of a habit in Call of Duty: Warzone as of late, a new weapon has been added to the game without notice from Activision. But unlike the relatively harmless Shadowhunter crossbow, today's new Sykov pistol is very good at killing.
 
                     By default, the Sykov looks and feels like any other pistol in Warzone, but it has a handful of attachments that could make it an overpowered beast. Once leveled, the Sykov can be configured to fire full-auto, equip 80-round drum magazines, and be dual-wielded to double up firepower. If you're keeping count, that's 160 bullets at an extremely high fire rate without having to reload.
-
-                    As you can see below in a clip from BennyCentral, the Sykov makes quick work of bots set up with roughly the same health as players have in Warzone. Its impressive time-to-kill at short range is something to behold.</h3>
+                </h3>
             </div>
         </div>
     </div>

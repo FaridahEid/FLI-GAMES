@@ -13,6 +13,7 @@
         margin: 0 auto;
         text-align: center;
     }
+
 </style>
 
 <html>
@@ -23,7 +24,7 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container card">
     <br>
     <h2>Login as an Admin</h2>
     <form action="getDevAdmin">

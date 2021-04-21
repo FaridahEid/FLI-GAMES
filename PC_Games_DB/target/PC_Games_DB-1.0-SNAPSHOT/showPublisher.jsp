@@ -89,6 +89,7 @@
             <br>
             <input type="submit" name="changePassword" value="Change">
         </form>
+
     </div>
     <form action="editPublisher">
     </form>

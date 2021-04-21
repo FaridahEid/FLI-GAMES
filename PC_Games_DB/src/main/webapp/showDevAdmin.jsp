@@ -29,20 +29,21 @@
     <br>
     <%
         devAdmin a = (devAdmin) request.getAttribute("devAdmin");
-        out.println("Admin name: " + a.getAdminName());
+        //out.println("Admin name: " + a.getAdminName());
     %>
+    <h2>Welcome <%=a.getAdminName()%></h2>
+
+    <%
+        //out.println("Admin ID: " + a.getAdminId());
+    %>
+    <h2>ID: <%=a.getAdminName()%></h2>
     <br>
     <br>
 
     <%
-        out.println("Admin ID: " + a.getAdminId());
+        //out.println("Email: " + a.getEmail());
     %>
-    <br>
-    <br>
-
-    <%
-        out.println("Email: " + a.getEmail());
-    %>
+    <h4>Current email <%=a.getEmail()%></h4>
     <br>
     <br>
     <br>
