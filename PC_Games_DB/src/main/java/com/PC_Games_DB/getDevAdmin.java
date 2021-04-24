@@ -2,11 +2,14 @@ package com.PC_Games_DB;
 
 
 import com.PC_Games_DB.errors.PlayerEditProfileError;
+import com.PC_Games_DB.players.player;
+import com.PC_Games_DB.publishers.publisher;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.PC_Games_DB.dev_admins.dao.devAdminDao;
 import com.PC_Games_DB.dev_admins.devAdmin;
@@ -32,6 +35,60 @@ public class getDevAdmin extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("login_admin.jsp");
                 rd.forward(request, response);
             }
+        }
+        if(request.getParameter("showPlayers")!=null){
+            String adminID = request.getParameter("adminID");
+            devAdminDao dao = new devAdminDao();
+            devAdmin a = dao.getDevAdmin(adminID);
+            ArrayList<player> players = dao.getAllPlayers();
+            request.setAttribute("players",players);
+            request.setAttribute("admin",a);
+            RequestDispatcher rd = request.getRequestDispatcher("showAdminPlayers.jsp");
+            rd.forward(request,response);
+        }
+        if(request.getParameter("searchByGamerID")!=null){
+            String adminID = request.getParameter("adminID");
+            String gamerID = request.getParameter("gamerID");
+            devAdminDao dao = new devAdminDao();
+            devAdmin a = dao.getDevAdmin(adminID);
+            ArrayList<player> players = dao.getPlayersByGamerID(gamerID);
+            request.setAttribute("players",players);
+            request.setAttribute("admin",a);
+            RequestDispatcher rd = request.getRequestDispatcher("showAdminPlayers.jsp");
+            rd.forward(request,response);
+        }
+        if(request.getParameter("removePlayer")!=null){
+            String adminID = request.getParameter("adminID");
+            String gamerID = request.getParameter("gamerID");
+            devAdminDao dao = new devAdminDao();
+            devAdmin a = dao.getDevAdmin(adminID);
+            boolean x = dao.deletePlayer(gamerID);
+            ArrayList<player> players = dao.getAllPlayers();
+            request.setAttribute("players",players);
+            request.setAttribute("admin",a);
+            RequestDispatcher rd = request.getRequestDispatcher("showAdminPlayers.jsp");
+            rd.forward(request,response);
+        }
+        if(request.getParameter("showPublishers")!=null){
+            String adminID = request.getParameter("adminID");
+            devAdminDao dao = new devAdminDao();
+            devAdmin a = dao.getDevAdmin(adminID);
+            ArrayList<publisher> publishers = dao.getAllPublishers();
+            request.setAttribute("publishers",publishers);
+            request.setAttribute("admin",a);
+            RequestDispatcher rd = request.getRequestDispatcher("showAdminPublishers.jsp");
+            rd.forward(request,response);
+        }
+        if(request.getParameter("searchByPublisherID")!=null){
+            String adminID = request.getParameter("adminID");
+            String publisherID = request.getParameter("publisherID");
+            devAdminDao dao = new devAdminDao();
+            devAdmin a = dao.getDevAdmin(adminID);
+            ArrayList<publisher> publishers = dao.getPublisherByID(publisherID);
+            request.setAttribute("publishers",publishers);
+            request.setAttribute("admin",a);
+            RequestDispatcher rd = request.getRequestDispatcher("showAdminPublishers.jsp");
+            rd.forward(request,response);
         }
 
     }

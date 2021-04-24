@@ -43,10 +43,19 @@
     <%
         //out.println("Email: " + a.getEmail());
     %>
-    <h4>Current email <%=a.getEmail()%></h4>
+    <h4>Current email: <%=a.getEmail()%></h4>
     <br>
     <br>
     <br>
+    <form action="getDevAdmin">
+        <input type="hidden" name="adminID" value="<%=a.getAdminId()%>">
+        <input type="submit" name="showPlayers" value="Show All Players">
+    </form>
+
+    <form action="getDevAdmin">
+        <input type="hidden" name="adminID" value="<%=a.getAdminId()%>">
+        <input type="submit" name="showPublishers" value="Show All Publishers">
+    </form>
 
 </div>
 </body>

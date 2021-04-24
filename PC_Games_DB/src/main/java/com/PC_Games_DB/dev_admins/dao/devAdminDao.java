@@ -5,7 +5,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
 import com.PC_Games_DB.dev_admins.devAdmin;
+import com.PC_Games_DB.players.player;
+import com.PC_Games_DB.publishers.publisher;
 
 
 public class devAdminDao {
@@ -55,5 +59,106 @@ public class devAdminDao {
             System.out.println(e);
         }
         return null;
+    }
+    public ArrayList<player> getAllPlayers(){
+        ArrayList<player> players = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db", "root", "loay1999");
+            PreparedStatement ps = con.prepareStatement("select * from players");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                player p = new player();
+                p.setGamerID(rs.getString("gamerID"));
+                p.setGamerName(rs.getString("gamerName"));
+                p.setDate_joined(rs.getString("date_joined"));
+                p.setDOB(rs.getString("DOB"));
+                p.setEmail(rs.getString("email"));
+                players.add(p);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+        return players;
+    }
+    public ArrayList<player> getPlayersByGamerID(String gamerID){
+        ArrayList<player> players = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db", "root", "loay1999");
+            PreparedStatement ps = con.prepareStatement("select * from players where gamerID like ?");
+            ps.setString(1,gamerID);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                player p = new player();
+                p.setGamerID(rs.getString("gamerID"));
+                p.setGamerName(rs.getString("gamerName"));
+                p.setDate_joined(rs.getString("date_joined"));
+                p.setDOB(rs.getString("DOB"));
+                p.setEmail(rs.getString("email"));
+                players.add(p);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return players;
+    }
+
+    public boolean deletePlayer(String gamerID){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
+            PreparedStatement ps = con.prepareStatement("delete from players where gamerID=?");
+            ps.setString(1,gamerID);
+            ps.execute();
+            PreparedStatement ps2 = con.prepareStatement("delete from login_g where gamerID=?");
+            ps2.setString(1,gamerID);
+            ps2.execute();
+            return true;
+        }catch (Exception e){
+            System.out.println(e);
+            return false;
+        }
+
+    }
+
+    public ArrayList<publisher> getAllPublishers(){
+        ArrayList<publisher> publishers = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db", "root", "loay1999");
+            PreparedStatement ps = con.prepareStatement("select * from publishers");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                publisher p = new publisher();
+                p.setPublisherID(rs.getString("publisherID"));
+                p.setPname(rs.getString("pname"));
+                publishers.add(p);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return publishers;
+    }
+
+    public ArrayList<publisher> getPublisherByID(String publisherID){
+        ArrayList<publisher> publishers = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db", "root", "loay1999");
+            PreparedStatement ps = con.prepareStatement("select * from publishers where publisherID like ?");
+            ps.setString(1,publisherID);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                publisher p = new publisher();
+                p.setPublisherID(rs.getString("publisherID"));
+                p.setPname(rs.getString("pname"));
+                publishers.add(p);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return publishers;
     }
 }
