@@ -65,10 +65,26 @@ public class playerDao {
             ps.setInt(2,Integer.parseInt(gameID));
             ps.executeUpdate();
             con.close();
-            System.out.println("game added");
+            System.out.println("Added game " + gameID + " for player " + gamerID);
         }catch(Exception e){
             System.out.println(e);
         }
+    }
+
+    public void removeGame(String gamerID, String gameID) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
+            PreparedStatement ps = con.prepareStatement("DELETE FROM players_games WHERE gamerID = ? AND gameID = ?");
+            ps.setString(1,gamerID);
+            ps.setInt(2,Integer.parseInt(gameID));
+            ps.executeUpdate();
+            con.close();
+            System.out.println("Removed game " + gameID + " from player " + gamerID);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public boolean addPlayer(String gamerID, String gamerName, String DOB, String email, String date_joined, String password){

@@ -83,6 +83,7 @@
             <th><b>Year</b></th>
             <th><b>Genre</b></th>
             <th><b>Distribution Services</b></th>
+            <th><b>Remove</b></th>
         </tr>
     <%
 
@@ -101,6 +102,13 @@
                 <%
             }%>
             </w></td>
+            <td>
+                <form action="removeGame">
+                    <input type="hidden" name="gameID" value="<%=g.getGameID()%>">
+                    <input type="hidden" name="gamerID" value="<%=p.getGamerID()%>">
+                    <input type="submit" name="removeGame" value="Remove Game">
+                </form>
+            </td>
         </tr>
     <%
         }
