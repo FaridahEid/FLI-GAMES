@@ -105,7 +105,7 @@
     <div id="changeName" style="display: none">
         <form action="editPlayer">
             <input type="hidden" name="gamerID" value=<%=p.getGamerID()%>>
-            <label>New Gamer Name: </label>
+            <label><pe>New Gamer Name: </pe></label>
             <input type="text" name="gamerName">
             <input type="submit" name="changeGamerName" value="Change">
         </form>
@@ -113,20 +113,21 @@
     <div id="changeEmail" style="display: none">
         <form action="editPlayer">
             <input type="hidden" name="gamerID" value=<%=p.getGamerID()%>>
-            <label>New Email: </label>
+            <label><pe>New Email: </pe></label>
             <input type="email" name="email">
             <input type="submit" name="changeEmail" value="Change">
+            <br>
         </form>
     </div>
     <div id="changePassword" style="display: none">
         <form action="editPlayer">
             <input type="hidden" name="gamerID" value=<%=p.getGamerID()%>>
-            <label>Old Password: </label>
+            <label><pe>Old Password: </pe></label>
             <input type="password" name="oldPassword">
             <br>
-            <label>New Password: </label>
+            <label><pe>New Password: </pe></label>
             <input type="password" name="newPassword">
-            <label>Password must be at least 8 characters.</label>
+            <label><yl>Password must be at least 8 characters.</yl></label>
             <br>
             <input type="submit" name="changePassword" value="Change">
         </form>

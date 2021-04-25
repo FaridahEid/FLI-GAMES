@@ -12,6 +12,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wallpoet">
+    <br>
     <title>FLI GAMES</title>
 
 <%--Logo in tab--%>

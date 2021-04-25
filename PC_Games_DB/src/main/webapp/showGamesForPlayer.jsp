@@ -11,30 +11,7 @@
 <%@ page import="com.PC_Games_DB.players.player" %>
 <style type="text/css">
     @import "stylesheet.css";
-    <%--
-    .container {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 15px;
-    }
-    table {
-        border-spacing: 5px;
-    }
-    th {
-        text-align: left;
-    }
-    .center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    --%>
+
     .container {
         display: block;
         margin: 0 auto;
@@ -97,17 +74,17 @@
         <label>Year: </label>
         <input type="text" name="year">
         <input type="submit" name="gamesListPlayerSearchYear" value="Search">
-        <label> (e.g. 2020)</label>
+        <label><yl> (e.g. 2020)</yl></label>
         <br>
         <label>Genre: </label>
         <input type="text" name="genre">
         <input type="submit" name="gamesListPlayerSearchGenre" value="Search">
-        <label> (e.g. Puzzle)</label>
+        <label> <yl>(e.g. Puzzle)</yl></label>
         <br>
         <label>Distribution Service: </label>
         <input type="text" name="platform">
         <input type="submit" name="gamesListPlayerSearchPlatform" value="Search">
-        <label> (e.g. Steam)</label>
+        <label> <yl>(e.g. Steam)</yl></label>
     </form>
     <br>
     <br>

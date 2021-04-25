@@ -78,7 +78,7 @@
     }else{
 
   %>
-  <table style="width:44%" class="center" >
+  <table style="width:56%" class="center" >
     <tr class="boxed2">
       <th><b>Player ID</b></th>
       <th><b>Player Name</b></th>

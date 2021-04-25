@@ -79,12 +79,12 @@
     <div id="changePassword" style="display: none">
         <form action="editPublisher">
             <input type="hidden" name="publisherID" value=<%=p.getPublisherID()%>>
-            <label>Old Password: </label>
+            <label><pe>Old Password: </pe></label>
             <input type="password" name="oldPassword">
             <br>
-            <label>New Password: </label>
+            <label><pe>New Password: </pe></label>
             <input type="password" name="newPassword">
-            <label><mw>Password must be at least 8 characters.</mw></label>
+            <label><yl>Password must be at least 8 characters.</yl></label>
             <br>
             <br>
             <input type="submit" name="changePassword" value="Change">

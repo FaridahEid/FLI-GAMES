@@ -34,7 +34,7 @@ c{
 }
 underline{
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     text-decoration:underline;
 }
 w{
@@ -55,7 +55,16 @@ mw{
     left: -100px;
 }
 
-
+/*edit info font, profile edit*/
+pe{
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration:underline;
+}
+yl{
+    color: #e7ca0f;
+    font-size: 18px;
+}
 h2 {
     font-family: "Wallpoet", sans-serif;
     font-size: 50px;
