@@ -57,7 +57,7 @@
 
   %>
   <form action="getDevAdmin">
-    <label>Search by Gamer ID: </label>
+    <label>Search by Publsiher ID: </label>
     <input type="hidden" name="adminID" value=<%=a.getAdminId()%>>
     <input type="text" name="publisherID">
     <input type="submit" name="searchByPublisherID" value="Search">
