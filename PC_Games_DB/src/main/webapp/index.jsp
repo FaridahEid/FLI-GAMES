@@ -11,12 +11,11 @@
 
 <html>
 <head>
+    <link rel = "icon" href ="logo2.png" type = "image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wallpoet">
     <br>
     <title>FLI GAMES</title>
 
-<%--Logo in tab--%>
-<link rel = "icon" href ="logo2.png" type = "image/png">
 
 </head>
 <body>
