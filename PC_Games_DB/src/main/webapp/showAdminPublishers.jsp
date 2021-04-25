@@ -1,4 +1,4 @@
-<%@ page import="com.PC_Games_DB.dev_admins.devAdmin" %>
+<%@ page import="com.PC_Games_DB.dev_admins.DevAdmin" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.PC_Games_DB.publishers.publisher" %><%--
   Created by IntelliJ IDEA.
@@ -52,7 +52,7 @@
   <br>
   <br>
   <%
-    devAdmin a = (devAdmin) request.getAttribute("admin");
+    DevAdmin a = (DevAdmin) request.getAttribute("admin");
     ArrayList<publisher> publishers = (ArrayList<publisher>) request.getAttribute("publishers");
 
   %>

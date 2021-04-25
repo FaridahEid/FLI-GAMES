@@ -1,7 +1,7 @@
 package com.PC_Games_DB.dev_admins;
 
 public class
-devAdmin {
+DevAdmin {
     private String devID;
     private String adminId;
     private String email;

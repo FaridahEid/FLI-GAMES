@@ -7,14 +7,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.PC_Games_DB.dev_admins.devAdmin;
+import com.PC_Games_DB.dev_admins.DevAdmin;
 import com.PC_Games_DB.players.player;
 import com.PC_Games_DB.publishers.publisher;
 
 
-public class devAdminDao {
-    public devAdmin getDevAdmin(String adminID){
-        devAdmin a = new devAdmin();
+public class DevAdminDao {
+    public DevAdmin getDevAdmin(String adminID){
+        DevAdmin a = new DevAdmin();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
@@ -32,8 +32,8 @@ public class devAdminDao {
         }
         return a;
     }
-    public devAdmin devAdminSignin(String adminID, String password){
-        devAdmin a = new devAdmin();
+    public DevAdmin devAdminSignin(String adminID, String password){
+        DevAdmin a = new DevAdmin();
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -160,5 +160,56 @@ public class devAdminDao {
             System.out.println(e);
         }
         return publishers;
+    }
+
+    public boolean changeEmail(String adminID, String email) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
+            PreparedStatement ps = con.prepareStatement("UPDATE dev_admin SET email = ? WHERE adminID = ?");
+            ps.setString(1, email);
+            ps.setString(2, adminID);
+            ps.executeUpdate();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
+
+    }
+
+    public boolean changePassword(String adminID, String password) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
+            PreparedStatement ps = con.prepareStatement("UPDATE login_d SET password = ? WHERE adminID = ?");
+            ps.setString(1, password);
+            ps.setString(2, adminID);
+            ps.executeUpdate();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return false;
+
+    }
+
+    public boolean checkPassword(String adminID, String password) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pc_games_db","root","loay1999");
+            PreparedStatement ps2 = con.prepareStatement("select * from login_d where adminID=?");
+            ps2.setString(1,adminID);
+            ResultSet rs2 = ps2.executeQuery();
+            if (rs2.next()) {
+                if (rs2.getString("password").equals(password)){
+                    return true;
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
