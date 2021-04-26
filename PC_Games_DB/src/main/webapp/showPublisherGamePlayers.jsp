@@ -10,30 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
     @import "stylesheet.css";
-    <%--
-    .container {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 15px;
-    }
-    table {
-        border-spacing: 5px;
-    }
-    th {
-        text-align: left;
-    }
-    .center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    --%>
+
+
     .container {
         display: block;
         margin: 0 auto;
@@ -79,7 +57,7 @@
     </h2>
     <br>
     <br>
-    <table style="width:32.5%" class="center">
+    <table style="width:31.5%" class="center">
         <tr class="boxed2">
             <th>Gamer ID</th>
             <th>Gamer Name</th>
